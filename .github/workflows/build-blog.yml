@@ -30,9 +30,12 @@ jobs:
       #     to: html # If set, it will be equivalent to `quarto render --to html`
       #     path: source-folder # By default, the current working dir is used i.e `quarto render .`
 
-      - name: Publish to GitHub Pages (and render)
-        uses: quarto-dev/quarto-actions/publish@v2
+      - name: Build site 🔧
+        run: |
+          quarto render
+      - name: Deploy 🚀
+        if: github.event_name != 'pull_request'
+        uses: JamesIves/github-pages-deploy-action@4.1.7
         with:
-          target: gh-pages
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this secret is always available for github actions
+          branch: gh-pages # The branch the action should deploy to.
+          folder: _site # The folder the action should deploy.
