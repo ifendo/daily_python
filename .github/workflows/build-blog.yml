@@ -21,11 +21,15 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install pandas numpy matplotlib
 
-      - name: Build the blog
-        run: jb build .
+      # - name: Render Quarto Project
+      #   uses: quarto-dev/quarto-actions/render@v2
+      #   with:
+      #     to: html # If set, it will be equivalent to `quarto render --to html`
+      #     path: source-folder # By default, the current working dir is used i.e `quarto render .`
 
-      - name: Push to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3.6.1
+      - name: Publish to GitHub Pages (and render)
+        uses: quarto-dev/quarto-actions/publish@v2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: _build/html
+          target: gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this secret is always available for github actions
