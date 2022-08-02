@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "Creating a pandas DataFrame\n\nimport pandas as pd\n\ndata = {\"Name\": [\"a\", \"b\", \"c\", \"d\"],\n        \"Age\": [24, 23, 22, 19]}\n\ndata\n\ndf = pd.DataFrame(data)\ndf\n\n\n\n\n\n  \n    \n      \n      Name\n      Age\n    \n  \n  \n    \n      0\n      a\n      24\n    \n    \n      1\n      b\n      23\n    \n    \n      2\n      c\n      22\n    \n    \n      3\n      d\n      19\n    \n  \n\n\n\n\n\n\nSelecting a Column\n\ndf[\"Name\"]\ndf[[\"Name\"]] # the difference?\n\n\n\n\n\n  \n    \n      \n      Name\n    \n  \n  \n    \n      0\n      a\n    \n    \n      1\n      b\n    \n    \n      2\n      c\n    \n    \n      3\n      d\n    \n  \n\n\n\n\n\n\nSelecting a Row\n\ndf.loc[1]\ndf.iloc[1]\n?df.iloc\n\n\n\nData Selection, addition\n\n# ?df.insert\ndf.insert(1, \"Sex\", \"F\")\ndel df[\"Sex\"]\ndf.insert(2, \"Sex\", \"M\")\ndf\n\n\n\n\n\n  \n    \n      \n      Name\n      Age\n      Sex\n    \n  \n  \n    \n      0\n      a\n      24\n      M\n    \n    \n      1\n      b\n      23\n      M\n    \n    \n      2\n      c\n      22\n      M\n    \n    \n      3\n      d\n      19\n      M\n    \n  \n\n\n\n\n\n\nWorking with missing data\n\nimport numpy as np\ndata = {\"Name\": ['A', np.nan], \"Age\": [23, np.nan]}\n\ndf = pd.DataFrame(data)\ndf\n\ndf.isnull()\ndf.fillna(0)\n\n\n\n\n\n  \n    \n      \n      Name\n      Age\n    \n  \n  \n    \n      0\n      A\n      23.0\n    \n    \n      1\n      0\n      0.0\n    \n  \n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nuse exit instead of exit() to exit the RStudio Python REPL"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "Since this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this blog"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "daily_python",
+    "section": "",
+    "text": "news\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nAug 2, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nAug 1, 2022\n\n\nJie Wang\n\n\n\n\n\n\nNo matching items"
+  }
+]
