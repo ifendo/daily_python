@@ -1,0 +1,65 @@
+---
+title: "Post With Code"
+author: "Jie Wang"
+date: "2022-08-02"
+categories: [news, code, analysis]
+image: "image.jpg"
+jupyter: python3
+---
+
+Practice based on [pandas intro](https://github.com/Tanu-N-Prabhu/Python/blob/master/Pandas/Pandas_DataFrame.ipynb)
+
+# Creating a pandas DataFrame
+```{python}
+import pandas as pd
+
+data = {"Name": ["a", "b", "c", "d"],
+        "Age": [24, 23, 22, 19]}
+
+data
+
+df = pd.DataFrame(data)
+df
+```
+
+# Selecting a Column
+
+```{python}
+df["Name"]
+df[["Name"]] # the difference?
+```
+
+# Selecting a Row
+
+```{python}
+df.loc[1]
+df.iloc[1]
+?df.iloc
+```
+
+# Data Selection, addition
+
+```{python}
+# ?df.insert
+df.insert(1, "Sex", "F")
+del df["Sex"]
+df.insert(2, "Sex", "M")
+df
+```
+
+# Working with missing data
+
+```{python}
+import numpy as np
+data = {"Name": ['A', np.nan], "Age": [23, np.nan]}
+
+df = pd.DataFrame(data)
+df
+
+df.isnull()
+df.fillna(0)
+```
+
+:::{.callout-note}
+use `exit` or `quit` instead of `exit()` to exit the RStudio Python REPL
+:::

@@ -1,0 +1,18 @@
+project:
+  type: website
+
+website:
+  title: "daily_python"
+  navbar:
+    right:
+      - about.qmd
+      - icon: linkedin
+        href: https://www.linkedin.com/in/jie-wang-hb/
+      - icon: github
+        href: https://github.com/ifendo
+format:
+  html:
+    theme: pulse
+    css: styles.css
+
+editor: source
