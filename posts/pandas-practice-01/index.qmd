@@ -1,0 +1,36 @@
+---
+title: "Pandas basics 01"
+author: "Jie Wang"
+date: "2022-08-04"
+categories: [pandas]
+image: "pandas.png"
+jupyter: python3
+---
+
+Practice based on [pandas intro](https://nbviewer.org/github/Tanu-N-Prabhu/Python/blob/master/Manipulating_the_data_with_Pandas_using_Python.ipynb)
+
+# Creating a pandas DataFrame
+
+```{python}
+import pandas as pd
+
+df = pd.DataFrame({
+    "Date": ["11/05/19", "12/05/19", "13/05/19"],
+    "Time Worked": [3, 6, 5],
+    "Money Earned": [33.5, 42.3, 52.1],
+})
+
+```
+
+# basic summaries
+```{python}
+df["Time Worked"].sum()
+df["Money Earned"].sum()
+```
+
+# A basic plot from `pandas`
+
+```{python}
+df.plot(x="Date", y="Money Earned", kind = "bar")
+```
+
