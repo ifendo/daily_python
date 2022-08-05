@@ -7,6 +7,13 @@
     "text": "pip freeze > requirements.txt"
   },
   {
+    "objectID": "posts/pandas-practice-01/index.html",
+    "href": "posts/pandas-practice-01/index.html",
+    "title": "Pandas basics 01",
+    "section": "",
+    "text": "Creating a pandas DataFrame\n\nimport pandas as pd\n\ndf = pd.DataFrame({\n    \"Date\": [\"11/05/19\", \"12/05/19\", \"13/05/19\"],\n    \"Time Worked\": [3, 6, 5],\n    \"Money Earned\": [33.5, 42.3, 52.1],\n})\n\n\n\nbasic summaries\n\ndf[\"Time Worked\"].sum()\ndf[\"Money Earned\"].sum()\n\n127.9\n\n\n\n\nA basic plot from pandas\n\ndf.plot(x=\"Date\", y=\"Money Earned\", kind = \"bar\")\n\n<AxesSubplot:xlabel='Date'>"
+  },
+  {
     "objectID": "posts/post-with-code/index.html",
     "href": "posts/post-with-code/index.html",
     "title": "Post With Code",
@@ -32,6 +39,6 @@
     "href": "index.html",
     "title": "daily_python",
     "section": "",
-    "text": "virtualenv\n\n\n\n\n\n\n\n\n\n\n\nAug 3, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nAug 2, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nAug 1, 2022\n\n\nJie Wang\n\n\n\n\n\n\nNo matching items"
+    "text": "pandas\n\n\n\n\n\n\n\n\n\n\n\nAug 4, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nvirtualenv\n\n\n\n\n\n\n\n\n\n\n\nAug 3, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nAug 2, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nAug 1, 2022\n\n\nJie Wang\n\n\n\n\n\n\nNo matching items"
   }
 ]
