@@ -7,6 +7,48 @@
     "text": "pip freeze > requirements.txt"
   },
   {
+    "objectID": "posts/numpy-intro/index.html",
+    "href": "posts/numpy-intro/index.html",
+    "title": "NumPy intro",
+    "section": "",
+    "text": "https://numpy.org/doc/stable/user/quickstart.html\nhttps://numpy.org/doc/stable/user/basics.html\nNumPy’s array class is called ndarray"
+  },
+  {
+    "objectID": "posts/numpy-intro/index.html#import-attributes-of-an-ndarray-object",
+    "href": "posts/numpy-intro/index.html#import-attributes-of-an-ndarray-object",
+    "title": "NumPy intro",
+    "section": "import attributes of an ndarray object:",
+    "text": "import attributes of an ndarray object:\n\nndarray.ndim\nndarray.shape\nndarray.size\nndarray.dtype\nndarray.itemsize\nndarray.data"
+  },
+  {
+    "objectID": "posts/numpy-intro/index.html#an-example",
+    "href": "posts/numpy-intro/index.html#an-example",
+    "title": "NumPy intro",
+    "section": "An example",
+    "text": "An example\n\nimport numpy as np\n\na = np.arange(15).reshape(3,5)\n\nprint(a)\nprint(a.ndim)\nprint(a.shape)\nprint(a.size)\nprint(a.dtype)\nprint(a.itemsize)\nprint(a.data)\n\n[[ 0  1  2  3  4]\n [ 5  6  7  8  9]\n [10 11 12 13 14]]\n2\n(3, 5)\n15\nint64\n8\n<memory at 0x7fe05abd2f60>"
+  },
+  {
+    "objectID": "posts/numpy-intro/index.html#array-creation",
+    "href": "posts/numpy-intro/index.html#array-creation",
+    "title": "NumPy intro",
+    "section": "Array Creation",
+    "text": "Array Creation\n1-D array\n\n# create an array from a regular python list or tuple\na = np.array([2,3,4])\nb = np.array((5,6,7)) # tuple\nc = np.array((8.1,9.2,10.3))\nprint(a)\nprint(a.dtype)\nprint(a.itemsize)\n\nprint(b)\nprint(b.dtype)\nprint(b.itemsize)\n\nprint(c)\nprint(c.dtype)\nprint(c.itemsize)\n\n[2 3 4]\nint64\n8\n[5 6 7]\nint64\n8\n[ 8.1  9.2 10.3]\nfloat64\n8\n\n\n2-D array\n\na = np.array([[1.1,2.1,3.1],[1.2,2.2,3.2]])\nb = np.array(([1,2,3],[4,5,6]))\n\nprint(a)\nprint(b)\n\n[[1.1 2.1 3.1]\n [1.2 2.2 3.2]]\n[[1 2 3]\n [4 5 6]]"
+  },
+  {
+    "objectID": "posts/numpy-intro/index.html#array-helper-functions",
+    "href": "posts/numpy-intro/index.html#array-helper-functions",
+    "title": "NumPy intro",
+    "section": "array helper functions",
+    "text": "array helper functions\n\na = np.zeros([3,4])\nb = np.zeros((2,3))\n\nc = np.ones([3,4])\nd = np.ones((2,3))\n\ne = np.empty([3,4]) # random elements\nf = np.empty((2,3)) # random elements\nprint(a)\nprint(b)\nprint(c)\nprint(d)\nprint(e)\nprint(f)\n\n# np.arange is similar to range\ng = np.arange(10,30,2)\nprint(g)\n\n[[0. 0. 0. 0.]\n [0. 0. 0. 0.]\n [0. 0. 0. 0.]]\n[[0. 0. 0.]\n [0. 0. 0.]]\n[[1. 1. 1. 1.]\n [1. 1. 1. 1.]\n [1. 1. 1. 1.]]\n[[1. 1. 1.]\n [1. 1. 1.]]\n[[4.68495719e-310 0.00000000e+000 1.87680551e-152 3.68321745e+180]\n [3.98449982e+252 1.94209271e+227 7.48551512e+247 2.21366527e+214]\n [2.35566768e+251 4.78106048e+180 1.64311174e+214 1.18557519e+164]]\n[[1.1 2.1 3.1]\n [1.2 2.2 3.2]]\n[10 12 14 16 18 20 22 24 26 28]"
+  },
+  {
+    "objectID": "posts/numpy-intro/index.html#basic-operations",
+    "href": "posts/numpy-intro/index.html#basic-operations",
+    "title": "NumPy intro",
+    "section": "Basic Operations",
+    "text": "Basic Operations\n\na = np.array([20,30,40,50])\nb = np.arange(4)\nprint(a)\nprint(b)\n\nprint(a-b)\nprint(b**2)\nprint(a < 35)\n\n[20 30 40 50]\n[0 1 2 3]\n[20 29 38 47]\n[0 1 4 9]\n[ True  True False False]\n\n\n\na = np.arange(12).reshape(3,4)\nprint(a)\n\nprint(a.sum(axis = 0)) # sum of each column\nprint(a.sum(axis = 1)) # sum of each row\n\n[[ 0  1  2  3]\n [ 4  5  6  7]\n [ 8  9 10 11]]\n[12 15 18 21]\n[ 6 22 38]"
+  },
+  {
     "objectID": "posts/pandas-practice-01/index.html",
     "href": "posts/pandas-practice-01/index.html",
     "title": "Pandas basics 01",
@@ -39,6 +81,6 @@
     "href": "index.html",
     "title": "daily_python",
     "section": "",
-    "text": "pandas\n\n\n\n\n\n\n\n\n\n\n\nAug 4, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nvirtualenv\n\n\n\n\n\n\n\n\n\n\n\nAug 3, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nAug 2, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nAug 1, 2022\n\n\nJie Wang\n\n\n\n\n\n\nNo matching items"
+    "text": "numpy\n\n\n\n\n\n\n\n\n\n\n\nAug 5, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\npandas\n\n\n\n\n\n\n\n\n\n\n\nAug 4, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nvirtualenv\n\n\n\n\n\n\n\n\n\n\n\nAug 3, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nAug 2, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nAug 1, 2022\n\n\nJie Wang\n\n\n\n\n\n\nNo matching items"
   }
 ]
