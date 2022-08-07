@@ -25,7 +25,7 @@
     "href": "posts/numpy-intro/index.html#an-example",
     "title": "NumPy intro",
     "section": "An example",
-    "text": "An example\n\nimport numpy as np\n\na = np.arange(15).reshape(3,5)\n\nprint(a)\nprint(a.ndim)\nprint(a.shape)\nprint(a.size)\nprint(a.dtype)\nprint(a.itemsize)\nprint(a.data)\n\n[[ 0  1  2  3  4]\n [ 5  6  7  8  9]\n [10 11 12 13 14]]\n2\n(3, 5)\n15\nint64\n8\n<memory at 0x7fe05abd2f60>"
+    "text": "An example\n\nimport numpy as np\n\na = np.arange(15).reshape(3,5)\n\nprint(a)\nprint(a.ndim)\nprint(a.shape)\nprint(a.size)\nprint(a.dtype)\nprint(a.itemsize)\nprint(a.data)\n\n[[ 0  1  2  3  4]\n [ 5  6  7  8  9]\n [10 11 12 13 14]]\n2\n(3, 5)\n15\nint64\n8\n<memory at 0x7f055837af60>"
   },
   {
     "objectID": "posts/numpy-intro/index.html#array-creation",
@@ -39,7 +39,7 @@
     "href": "posts/numpy-intro/index.html#array-helper-functions",
     "title": "NumPy intro",
     "section": "array helper functions",
-    "text": "array helper functions\n\na = np.zeros([3,4])\nb = np.zeros((2,3))\n\nc = np.ones([3,4])\nd = np.ones((2,3))\n\ne = np.empty([3,4]) # random elements\nf = np.empty((2,3)) # random elements\nprint(a)\nprint(b)\nprint(c)\nprint(d)\nprint(e)\nprint(f)\n\n# np.arange is similar to range\ng = np.arange(10,30,2)\nprint(g)\n\n[[0. 0. 0. 0.]\n [0. 0. 0. 0.]\n [0. 0. 0. 0.]]\n[[0. 0. 0.]\n [0. 0. 0.]]\n[[1. 1. 1. 1.]\n [1. 1. 1. 1.]\n [1. 1. 1. 1.]]\n[[1. 1. 1.]\n [1. 1. 1.]]\n[[4.68495719e-310 0.00000000e+000 1.87680551e-152 3.68321745e+180]\n [3.98449982e+252 1.94209271e+227 7.48551512e+247 2.21366527e+214]\n [2.35566768e+251 4.78106048e+180 1.64311174e+214 1.18557519e+164]]\n[[1.1 2.1 3.1]\n [1.2 2.2 3.2]]\n[10 12 14 16 18 20 22 24 26 28]"
+    "text": "array helper functions\n\na = np.zeros([3,4])\nb = np.zeros((2,3))\n\nc = np.ones([3,4])\nd = np.ones((2,3))\n\ne = np.empty([3,4]) # random elements\nf = np.empty((2,3)) # random elements\nprint(a)\nprint(b)\nprint(c)\nprint(d)\nprint(e)\nprint(f)\n\n# np.arange is similar to range\ng = np.arange(10,30,2)\nprint(g)\n\n[[0. 0. 0. 0.]\n [0. 0. 0. 0.]\n [0. 0. 0. 0.]]\n[[0. 0. 0.]\n [0. 0. 0.]]\n[[1. 1. 1. 1.]\n [1. 1. 1. 1.]\n [1. 1. 1. 1.]]\n[[1. 1. 1.]\n [1. 1. 1.]]\n[[4.63921945e-310 0.00000000e+000 7.21555551e+159 8.89749171e+228]\n [1.88892019e+219 1.87673453e-152 1.87673453e-152 1.75786061e+156]\n [4.00979049e+087 2.46599819e-154 4.47593816e-091 1.77117164e+159]]\n[[1.1 2.1 3.1]\n [1.2 2.2 3.2]]\n[10 12 14 16 18 20 22 24 26 28]"
   },
   {
     "objectID": "posts/numpy-intro/index.html#basic-operations",
@@ -54,6 +54,76 @@
     "title": "Pandas basics 01",
     "section": "",
     "text": "Creating a pandas DataFrame\n\nimport pandas as pd\n\ndf = pd.DataFrame({\n    \"Date\": [\"11/05/19\", \"12/05/19\", \"13/05/19\"],\n    \"Time Worked\": [3, 6, 5],\n    \"Money Earned\": [33.5, 42.3, 52.1],\n})\n\n\n\nbasic summaries\n\ndf[\"Time Worked\"].sum()\ndf[\"Money Earned\"].sum()\n\n127.9\n\n\n\n\nA basic plot from pandas\n\ndf.plot(x=\"Date\", y=\"Money Earned\", kind = \"bar\")\n\n<AxesSubplot:xlabel='Date'>"
+  },
+  {
+    "objectID": "posts/pandas-practice-02/index.html",
+    "href": "posts/pandas-practice-02/index.html",
+    "title": "Pandas basics 02",
+    "section": "",
+    "text": "Practice based on pandas official site"
+  },
+  {
+    "objectID": "posts/pandas-practice-02/index.html#using-a-python-dictionary-of-lists",
+    "href": "posts/pandas-practice-02/index.html#using-a-python-dictionary-of-lists",
+    "title": "Pandas basics 02",
+    "section": "using a Python dictionary of lists",
+    "text": "using a Python dictionary of lists\n\nthe dictionary keys will be used as “column headers”\nthe values in each list as “columns” of the DataFrame\n\n\nimport pandas as pd\n\ndf = pd.DataFrame(\n    {\n        \"Name\": [\n            \"Tom\",\n            \"Jim\",\n            \"Rose\"\n        ],\n        \"Age\": [22, 35, 28],\n        \"Sex\": [\"male\", \"male\", \"female\"]\n    }\n)\n\ndf\n\n\n\n\n\n  \n    \n      \n      Name\n      Age\n      Sex\n    \n  \n  \n    \n      0\n      Tom\n      22\n      male\n    \n    \n      1\n      Jim\n      35\n      male\n    \n    \n      2\n      Rose\n      28\n      female"
+  },
+  {
+    "objectID": "posts/pandas-practice-02/index.html#each-column-in-a-dataframe-is-a-series",
+    "href": "posts/pandas-practice-02/index.html#each-column-in-a-dataframe-is-a-series",
+    "title": "Pandas basics 02",
+    "section": "each column in a DataFrame is a Series",
+    "text": "each column in a DataFrame is a Series\n\n# the selection of a single column is very similar to selection of dictionary\n# values based on the key\n\ntype(df[\"Age\"])\n\n# create a Series from scratch\nages = pd.Series([27,23,25], name =\"Age\")\nages\n\n0    27\n1    23\n2    25\nName: Age, dtype: int64"
+  },
+  {
+    "objectID": "posts/pandas-practice-02/index.html#do-something-with-a-dataframe-or-series",
+    "href": "posts/pandas-practice-02/index.html#do-something-with-a-dataframe-or-series",
+    "title": "Pandas basics 02",
+    "section": "Do something with a DataFrame or Series",
+    "text": "Do something with a DataFrame or Series\n\nprint(df[\"Age\"].max())\n\nprint(ages.max())\n\n35\n27"
+  },
+  {
+    "objectID": "posts/pandas-practice-02/index.html#basic-statistics",
+    "href": "posts/pandas-practice-02/index.html#basic-statistics",
+    "title": "Pandas basics 02",
+    "section": "Basic statistics",
+    "text": "Basic statistics\n\ndf.describe() # provides a quick overview of the numerical data in DataFrame\n\n\n\n\n\n  \n    \n      \n      Age\n    \n  \n  \n    \n      count\n      3.000000\n    \n    \n      mean\n      28.333333\n    \n    \n      std\n      6.506407\n    \n    \n      min\n      22.000000\n    \n    \n      25%\n      25.000000\n    \n    \n      50%\n      28.000000\n    \n    \n      75%\n      31.500000\n    \n    \n      max\n      35.000000"
+  },
+  {
+    "objectID": "posts/pandas-practice-02/index.html#series",
+    "href": "posts/pandas-practice-02/index.html#series",
+    "title": "Pandas basics 02",
+    "section": "Series",
+    "text": "Series\nbasic syntax s = pd.Series(data, index=index)\nHere data can be many different things:\n\na Python dict\nan ndarray\na scalar value (like 5)\n\nThe index is a list of axis labels\nThe axis labels are collectively reffered to as the index\n\nimport numpy as np\n\n# from ndarray\ns = pd.Series(np.random.randn(5), index = [\"a\",\"b\",\"c\",\"d\",\"e\"])\ns\n\n# from dist\nd = {\"x\": 1, \"y\": 2, \"z\": 5}\npd.Series(d)\n\n# if an index is passed, the values in data corresponding to the labels in the\n# index will be pulled out\nd1 = {\"a\": 0.0, \"b\": 2.0, \"c\": 4.0}\npd.Series(d1)\nd2 = {\"a\": 0.0, \"b\": 2.0, \"c\": 4.0}\npd.Series(d2, index = [\"b\", \"d\", \"a\", \"c\"])\n\n# from scalar value\npd.Series(5.8, index = [\"a\", \"b\", \"d\", \"f\"])\n\na    5.8\nb    5.8\nd    5.8\nf    5.8\ndtype: float64\n\n\nwhat is ndarry? which is shorthand for “N-dimensional array”\nThe NumPy ndarray class is used to represent both matrices and vectors.\nSee reference here\n\nA vector is an array with 1 dimension\nA matrix is an array with 1 dimension\nA 3-D or higher dimensional arrays, tensor is commonly used\n\nIn NumPy, dimensions are called axes"
+  },
+  {
+    "objectID": "posts/pandas-practice-02/index.html#from-dict-of-series-or-dict",
+    "href": "posts/pandas-practice-02/index.html#from-dict-of-series-or-dict",
+    "title": "Pandas basics 02",
+    "section": "From dict of Series or dict",
+    "text": "From dict of Series or dict\n\nd = {\n    \"one\": pd.Series([1.0, 2.0, 3.0], index = [\"a\",\"b\",\"c\"]),\n    \"two\": pd.Series([1.0,2.0,3.0,4.0], index=[\"a\",\"b\",\"c\",\"d\"])\n}\n\nprint(d)\nprint(type(d))\n\ndf = pd.DataFrame(d)\nprint(df)\n\n{'one': a    1.0\nb    2.0\nc    3.0\ndtype: float64, 'two': a    1.0\nb    2.0\nc    3.0\nd    4.0\ndtype: float64}\n<class 'dict'>\n   one  two\na  1.0  1.0\nb  2.0  2.0\nc  3.0  3.0\nd  NaN  4.0"
+  },
+  {
+    "objectID": "posts/pandas-practice-02/index.html#from-dict-of-ndarrayslists",
+    "href": "posts/pandas-practice-02/index.html#from-dict-of-ndarrayslists",
+    "title": "Pandas basics 02",
+    "section": "From dict of ndarrays/lists",
+    "text": "From dict of ndarrays/lists\n\nd = {\"one\": [1.0,2.1,3.2,4.3], \"two\":[4.0,3.1,2.2,1.3]}\nprint(type(d))\nprint(pd.DataFrame(d))\n\n<class 'dict'>\n   one  two\n0  1.0  4.0\n1  2.1  3.1\n2  3.2  2.2\n3  4.3  1.3"
+  },
+  {
+    "objectID": "posts/pandas-practice-02/index.html#from-a-list-of-dicts",
+    "href": "posts/pandas-practice-02/index.html#from-a-list-of-dicts",
+    "title": "Pandas basics 02",
+    "section": "From a list of dicts",
+    "text": "From a list of dicts\n\ndata2 = [{\"a\": 1, \"b\": 2}, {\"a\": 5, \"b\": 10, \"c\": 20}]\nprint(pd.DataFrame(data2))\n\n   a   b     c\n0  1   2   NaN\n1  5  10  20.0"
+  },
+  {
+    "objectID": "posts/pandas-practice-02/index.html#column-selection-addition-deletion",
+    "href": "posts/pandas-practice-02/index.html#column-selection-addition-deletion",
+    "title": "Pandas basics 02",
+    "section": "Column selection, addition, deletion",
+    "text": "Column selection, addition, deletion\n\nd = {\n    \"one\": pd.Series([1.0, 2.0, 3.0], index = [\"a\",\"b\",\"c\"]),\n    \"two\": pd.Series([1.0,2.0,3.0,4.0], index=[\"a\",\"b\",\"c\",\"d\"])\n}\n\ndf = pd.DataFrame(d)\nprint(df)\n\n# selection\nprint(df[\"one\"])\n\n# addition\ndf[\"three\"] = df[\"one\"] * df[\"two\"]\ndf[\"flag\"] = df[\"one\"] > 2\nprint(df)\n\n# deletion\ndf2 = df.pop(\"three\")\nprint(df2)\n\n   one  two\na  1.0  1.0\nb  2.0  2.0\nc  3.0  3.0\nd  NaN  4.0\na    1.0\nb    2.0\nc    3.0\nd    NaN\nName: one, dtype: float64\n   one  two  three   flag\na  1.0  1.0    1.0  False\nb  2.0  2.0    4.0  False\nc  3.0  3.0    9.0   True\nd  NaN  4.0    NaN  False\na    1.0\nb    4.0\nc    9.0\nd    NaN\nName: three, dtype: float64"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -81,6 +151,6 @@
     "href": "index.html",
     "title": "daily_python",
     "section": "",
-    "text": "numpy\n\n\n\n\n\n\n\n\n\n\n\nAug 5, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\npandas\n\n\n\n\n\n\n\n\n\n\n\nAug 4, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nvirtualenv\n\n\n\n\n\n\n\n\n\n\n\nAug 3, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nAug 2, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nAug 1, 2022\n\n\nJie Wang\n\n\n\n\n\n\nNo matching items"
+    "text": "pandas\n\n\n\n\n\n\n\n\n\n\n\nAug 6, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnumpy\n\n\n\n\n\n\n\n\n\n\n\nAug 5, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\npandas\n\n\n\n\n\n\n\n\n\n\n\nAug 4, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nvirtualenv\n\n\n\n\n\n\n\n\n\n\n\nAug 3, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nAug 2, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nAug 1, 2022\n\n\nJie Wang\n\n\n\n\n\n\nNo matching items"
   }
 ]
