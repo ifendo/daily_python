@@ -1,0 +1,45 @@
+---
+title: "Python for Data Science Roadmap"
+author: "Jie Wang"
+date: "2022-08-07"
+categories: [notes]
+image: "pandas.png"
+jupyter: python3
+---
+
+# Roadmap
+
++ Data Preparation Basics
++ Data Visualization 101
++ Practical Data Visualization
++ Basic Math and Statistics
++ Data Sourcing via Web Scraping
++ Building Collaborative Analytics with Plotly
+
+```{python}
+import pandas as pd
+import numpy as np
+
+s = pd.Series(np.arange(5), index = ["row 1", "row 2", "row 3", "row 4", "row 5"])
+
+print(s)
+
+```
+
+## dataframe
+
+```{python}
+np.random.seed(25)
+DF_obj = pd.DataFrame(
+    np.random.rand(25).reshape(5,5),
+    index = ["row 1", "row 2", "row 3", "row 4", "row 5"],
+    columns = ["column 1", "column 2", "column 3", "column 4", "column 5"]
+)
+
+print(DF_obj)
+
+# row 2/5 and column 5/2
+print(DF_obj.loc[["row 2", "row 5"], ["column 5", "column 2"]])
+```
+
+
