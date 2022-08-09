@@ -25,7 +25,7 @@
     "href": "posts/numpy-intro/index.html#an-example",
     "title": "NumPy intro",
     "section": "An example",
-    "text": "An example\n\nimport numpy as np\n\na = np.arange(15).reshape(3,5)\n\nprint(a)\nprint(a.ndim)\nprint(a.shape)\nprint(a.size)\nprint(a.dtype)\nprint(a.itemsize)\nprint(a.data)\n\n[[ 0  1  2  3  4]\n [ 5  6  7  8  9]\n [10 11 12 13 14]]\n2\n(3, 5)\n15\nint64\n8\n<memory at 0x7f2cd4b16f60>"
+    "text": "An example\n\nimport numpy as np\n\na = np.arange(15).reshape(3,5)\n\nprint(a)\nprint(a.ndim)\nprint(a.shape)\nprint(a.size)\nprint(a.dtype)\nprint(a.itemsize)\nprint(a.data)\n\n[[ 0  1  2  3  4]\n [ 5  6  7  8  9]\n [10 11 12 13 14]]\n2\n(3, 5)\n15\nint64\n8\n<memory at 0x7fab08c2f1d0>"
   },
   {
     "objectID": "posts/numpy-intro/index.html#array-creation",
@@ -39,7 +39,7 @@
     "href": "posts/numpy-intro/index.html#array-helper-functions",
     "title": "NumPy intro",
     "section": "array helper functions",
-    "text": "array helper functions\n\na = np.zeros([3,4])\nb = np.zeros((2,3))\n\nc = np.ones([3,4])\nd = np.ones((2,3))\n\ne = np.empty([3,4]) # random elements\nf = np.empty((2,3)) # random elements\nprint(a)\nprint(b)\nprint(c)\nprint(d)\nprint(e)\nprint(f)\n\n# np.arange is similar to range\ng = np.arange(10,30,2)\nprint(g)\n\n[[0. 0. 0. 0.]\n [0. 0. 0. 0.]\n [0. 0. 0. 0.]]\n[[0. 0. 0.]\n [0. 0. 0.]]\n[[1. 1. 1. 1.]\n [1. 1. 1. 1.]\n [1. 1. 1. 1.]]\n[[1. 1. 1.]\n [1. 1. 1.]]\n[[6.90859209e-310 4.65805683e-310 6.90855189e-310 6.90855189e-310]\n [6.90855189e-310 6.90855189e-310 6.90855188e-310 6.90855189e-310]\n [6.90855189e-310 6.90855189e-310 6.90855189e-310 6.90855189e-310]]\n[[1.1 2.1 3.1]\n [1.2 2.2 3.2]]\n[10 12 14 16 18 20 22 24 26 28]"
+    "text": "array helper functions\n\na = np.zeros([3,4])\nb = np.zeros((2,3))\n\nc = np.ones([3,4])\nd = np.ones((2,3))\n\ne = np.empty([3,4]) # random elements\nf = np.empty((2,3)) # random elements\nprint(a)\nprint(b)\nprint(c)\nprint(d)\nprint(e)\nprint(f)\n\n# np.arange is similar to range\ng = np.arange(10,30,2)\nprint(g)\n\n[[0. 0. 0. 0.]\n [0. 0. 0. 0.]\n [0. 0. 0. 0.]]\n[[0. 0. 0.]\n [0. 0. 0.]]\n[[1. 1. 1. 1.]\n [1. 1. 1. 1.]\n [1. 1. 1. 1.]]\n[[1. 1. 1.]\n [1. 1. 1.]]\n[[6.93537243e-310 4.65705514e-310 3.80985064e+180 1.33360316e+241]\n [3.12060701e-310 3.57269797e-263 2.00429134e-313 8.74601785e-308]\n [5.75436584e-268 4.02977162e-270 1.00679241e-312 7.65535216e+199]]\n[[1.1 2.1 3.1]\n [1.2 2.2 3.2]]\n[10 12 14 16 18 20 22 24 26 28]"
   },
   {
     "objectID": "posts/numpy-intro/index.html#basic-operations",
@@ -128,9 +128,23 @@
   {
     "objectID": "posts/pandas-practice-03/index.html",
     "href": "posts/pandas-practice-03/index.html",
-    "title": "Python for Data Science Roadmap",
+    "title": "Data Preparation Basics",
     "section": "",
-    "text": "Data Preparation Basics\nData Visualization 101\nPractical Data Visualization\nBasic Math and Statistics\nData Sourcing via Web Scraping\nBuilding Collaborative Analytics with Plotly\n\n\nimport pandas as pd\nimport numpy as np\n\ns = pd.Series(np.arange(5), index = [\"row 1\", \"row 2\", \"row 3\", \"row 4\", \"row 5\"])\n\nprint(s)\n\nrow 1    0\nrow 2    1\nrow 3    2\nrow 4    3\nrow 5    4\ndtype: int64\n\n\n\n\n\nnp.random.seed(25)\nDF_obj = pd.DataFrame(\n    np.random.rand(25).reshape(5,5),\n    index = [\"row 1\", \"row 2\", \"row 3\", \"row 4\", \"row 5\"],\n    columns = [\"column 1\", \"column 2\", \"column 3\", \"column 4\", \"column 5\"]\n)\n\nprint(DF_obj)\n\n# row 2/5 and column 5/2\nprint(DF_obj.loc[[\"row 2\", \"row 5\"], [\"column 5\", \"column 2\"]])\n\n       column 1  column 2  column 3  column 4  column 5\nrow 1  0.870124  0.582277  0.278839  0.185911  0.411100\nrow 2  0.117376  0.684969  0.437611  0.556229  0.367080\nrow 3  0.402366  0.113041  0.447031  0.585445  0.161985\nrow 4  0.520719  0.326051  0.699186  0.366395  0.836375\nrow 5  0.481343  0.516502  0.383048  0.997541  0.514244\n       column 5  column 2\nrow 2  0.367080  0.684969\nrow 5  0.514244  0.516502"
+    "text": "import numpy as np\nimport pandas as pd\n\nmissing = np.nan\n\nseries_obj = pd.Series([\"row 1\", \"row 2\", missing, \"row 4\", \"row 5\"])\n\nprint(series_obj)\n\nprint(series_obj.isnull())\n\n0    row 1\n1    row 2\n2      NaN\n3    row 4\n4    row 5\ndtype: object\n0    False\n1    False\n2     True\n3    False\n4    False\ndtype: bool"
+  },
+  {
+    "objectID": "posts/pandas-practice-03/index.html#removing-duplicates",
+    "href": "posts/pandas-practice-03/index.html#removing-duplicates",
+    "title": "Data Preparation Basics",
+    "section": "Removing duplicates",
+    "text": "Removing duplicates\n\nDF_obj = pd.DataFrame({\n    \"column 1\": [1,1,2,2,3,3],\n    \"column 2\": [\"a\", \"a\", \"b\",\"b\",\"c\",\"c\"],\n    \"column 3\": [\"A\", \"A\",\"B\",\"B\",\"C\",\"C\"]   \n})\n\nprint(DF_obj)\n\nDF_obj.duplicated()\n\n# drop the duplicate\nDF_obj.drop_duplicates()\n\n# or \nDF_obj2 = pd.DataFrame({\n    \"column 1\": [1,1,2,2,3,3],\n    \"column 2\": [\"a\", \"a\", \"b\",\"b\",\"c\",\"c\"],\n    \"column 3\": [\"A\", \"A\",\"B\",\"B\",\"A\",\"A\"]   \n})\nDF_obj2.drop_duplicates([\"column 3\"])\n\n   column 1 column 2 column 3\n0         1        a        A\n1         1        a        A\n2         2        b        B\n3         2        b        B\n4         3        c        C\n5         3        c        C\n\n\n\n\n\n\n  \n    \n      \n      column 1\n      column 2\n      column 3\n    \n  \n  \n    \n      0\n      1\n      a\n      A\n    \n    \n      2\n      2\n      b\n      B"
+  },
+  {
+    "objectID": "posts/pandas-practice-03/index.html#concatenating-and-transforming",
+    "href": "posts/pandas-practice-03/index.html#concatenating-and-transforming",
+    "title": "Data Preparation Basics",
+    "section": "Concatenating and transforming",
+    "text": "Concatenating and transforming\n\nDF_obj1 = pd.DataFrame(np.arange(25).reshape(5,5))\nDF_obj1\n\nDF_obj2 = pd.DataFrame(np.arange(15).reshape(5,3))\nDF_obj2\n\nDF_combined = pd.concat([DF_obj1, DF_obj2], axis = 1) # by column\nDF_combined\n\nDF_combined_row = pd.concat([DF_obj1, DF_obj2], axis = 0) # by row\nDF_combined_row\n\n# drop data\nDF_obj1.drop([0,4]) # row with index 0 and 4\nDF_obj1.drop([0,4], axis = 1) # drop column with index 0 and 4\n\n\n\n\n\n  \n    \n      \n      1\n      2\n      3\n    \n  \n  \n    \n      0\n      1\n      2\n      3\n    \n    \n      1\n      6\n      7\n      8\n    \n    \n      2\n      11\n      12\n      13\n    \n    \n      3\n      16\n      17\n      18\n    \n    \n      4\n      21\n      22\n      23"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -158,6 +172,6 @@
     "href": "index.html",
     "title": "daily_python",
     "section": "",
-    "text": "notes\n\n\n\n\n\n\n\n\n\n\n\nAug 7, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\npandas\n\n\n\n\n\n\n\n\n\n\n\nAug 6, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnumpy\n\n\n\n\n\n\n\n\n\n\n\nAug 5, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\npandas\n\n\n\n\n\n\n\n\n\n\n\nAug 4, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nvirtualenv\n\n\n\n\n\n\n\n\n\n\n\nAug 3, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nAug 2, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nAug 1, 2022\n\n\nJie Wang\n\n\n\n\n\n\nNo matching items"
+    "text": "notes\n\n\n\n\n\n\n\n\n\n\n\nAug 8, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\npandas\n\n\n\n\n\n\n\n\n\n\n\nAug 6, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnumpy\n\n\n\n\n\n\n\n\n\n\n\nAug 5, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\npandas\n\n\n\n\n\n\n\n\n\n\n\nAug 4, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nvirtualenv\n\n\n\n\n\n\n\n\n\n\n\nAug 3, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nAug 2, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nAug 1, 2022\n\n\nJie Wang\n\n\n\n\n\n\nNo matching items"
   }
 ]
