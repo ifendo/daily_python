@@ -25,7 +25,7 @@
     "href": "posts/numpy-intro/index.html#an-example",
     "title": "NumPy intro",
     "section": "An example",
-    "text": "An example\n\nimport numpy as np\n\na = np.arange(15).reshape(3,5)\n\nprint(a)\nprint(a.ndim)\nprint(a.shape)\nprint(a.size)\nprint(a.dtype)\nprint(a.itemsize)\nprint(a.data)\n\n[[ 0  1  2  3  4]\n [ 5  6  7  8  9]\n [10 11 12 13 14]]\n2\n(3, 5)\n15\nint64\n8\n<memory at 0x7f078cf1f1d0>"
+    "text": "An example\n\nimport numpy as np\n\na = np.arange(15).reshape(3,5)\n\nprint(a)\nprint(a.ndim)\nprint(a.shape)\nprint(a.size)\nprint(a.dtype)\nprint(a.itemsize)\nprint(a.data)\n\n[[ 0  1  2  3  4]\n [ 5  6  7  8  9]\n [10 11 12 13 14]]\n2\n(3, 5)\n15\nint64\n8\n<memory at 0x7f73245af1d0>"
   },
   {
     "objectID": "posts/numpy-intro/index.html#array-creation",
@@ -39,7 +39,7 @@
     "href": "posts/numpy-intro/index.html#array-helper-functions",
     "title": "NumPy intro",
     "section": "array helper functions",
-    "text": "array helper functions\n\na = np.zeros([3,4])\nb = np.zeros((2,3))\n\nc = np.ones([3,4])\nd = np.ones((2,3))\n\ne = np.empty([3,4]) # random elements\nf = np.empty((2,3)) # random elements\nprint(a)\nprint(b)\nprint(c)\nprint(d)\nprint(e)\nprint(f)\n\n# np.arange is similar to range\ng = np.arange(10,30,2)\nprint(g)\n\n[[0. 0. 0. 0.]\n [0. 0. 0. 0.]\n [0. 0. 0. 0.]]\n[[0. 0. 0.]\n [0. 0. 0.]]\n[[1. 1. 1. 1.]\n [1. 1. 1. 1.]\n [1. 1. 1. 1.]]\n[[1. 1. 1.]\n [1. 1. 1.]]\n[[4.64367044e-310 0.00000000e+000 6.90063504e-310 6.90063504e-310]\n [6.90063504e-310 6.90063517e-310 6.90068088e-310 6.90063503e-310]\n [6.90063517e-310 6.90068088e-310 9.92152605e+247 9.54082889e-307]]\n[[1.1 2.1 3.1]\n [1.2 2.2 3.2]]\n[10 12 14 16 18 20 22 24 26 28]"
+    "text": "array helper functions\n\na = np.zeros([3,4])\nb = np.zeros((2,3))\n\nc = np.ones([3,4])\nd = np.ones((2,3))\n\ne = np.empty([3,4]) # random elements\nf = np.empty((2,3)) # random elements\nprint(a)\nprint(b)\nprint(c)\nprint(d)\nprint(e)\nprint(f)\n\n# np.arange is similar to range\ng = np.arange(10,30,2)\nprint(g)\n\n[[0. 0. 0. 0.]\n [0. 0. 0. 0.]\n [0. 0. 0. 0.]]\n[[0. 0. 0.]\n [0. 0. 0.]]\n[[1. 1. 1. 1.]\n [1. 1. 1. 1.]\n [1. 1. 1. 1.]]\n[[1. 1. 1.]\n [1. 1. 1.]]\n[[4.64183829e-310 0.00000000e+000 6.92346593e-310 6.92346593e-310]\n [6.92346593e-310 6.92346593e-310 6.92346593e-310 6.92346593e-310]\n [6.92346593e-310 6.92346593e-310 6.92346593e-310 6.92343608e-310]]\n[[1.1 2.1 3.1]\n [1.2 2.2 3.2]]\n[10 12 14 16 18 20 22 24 26 28]"
   },
   {
     "objectID": "posts/numpy-intro/index.html#basic-operations",
@@ -54,6 +54,20 @@
     "title": "Pandas basics 01",
     "section": "",
     "text": "Creating a pandas DataFrame\n\nimport pandas as pd\n\ndf = pd.DataFrame({\n    \"Date\": [\"11/05/19\", \"12/05/19\", \"13/05/19\"],\n    \"Time Worked\": [3, 6, 5],\n    \"Money Earned\": [33.5, 42.3, 52.1],\n})\n\n\n\nbasic summaries\n\ndf[\"Time Worked\"].sum()\ndf[\"Money Earned\"].sum()\n\n127.9\n\n\n\n\nA basic plot from pandas\n\ndf.plot(x=\"Date\", y=\"Money Earned\", kind = \"bar\")\n\n<AxesSubplot:xlabel='Date'>"
+  },
+  {
+    "objectID": "posts/data-visualization-101/index.html",
+    "href": "posts/data-visualization-101/index.html",
+    "title": "Data Visualization",
+    "section": "",
+    "text": "Make it easy for the audience to get the point"
+  },
+  {
+    "objectID": "posts/data-visualization-101/index.html#from-pandas-object",
+    "href": "posts/data-visualization-101/index.html#from-pandas-object",
+    "title": "Data Visualization",
+    "section": "from pandas object",
+    "text": "from pandas object\n\nmtcars = pd.read_csv(\"mtcars.csv\")\nmtcars.head()\nmpg = mtcars[\"mpg\"]\n\nmpg.plot()\n\n<AxesSubplot:>\n\n\n\n\n\n\ndf = mtcars[[\"cyl\", \"wt\", \"mpg\"]]\n\ndf.plot()\n\n<AxesSubplot:>\n\n\n\n\n\n\nbar chart\n\nplt.bar(x, y)\n\n<BarContainer object of 9 artists>\n\n\n\n\n\n\ndf.plot(kind = \"barh\")\n\n<AxesSubplot:>\n\n\n\n\n\n\n\nPie chart\n\nx = [1,2,3,4,0.5]\nplt.pie(x)\nplt.show()\n# plt.savefig(\"pie.png\")"
   },
   {
     "objectID": "posts/pandas-practice-04/index.html",
@@ -179,6 +193,6 @@
     "href": "index.html",
     "title": "daily_python",
     "section": "",
-    "text": "notes\n\n\n\n\n\n\n\n\n\n\n\nAug 8, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnotes\n\n\n\n\n\n\n\n\n\n\n\nAug 7, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\npandas\n\n\n\n\n\n\n\n\n\n\n\nAug 6, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnumpy\n\n\n\n\n\n\n\n\n\n\n\nAug 5, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\npandas\n\n\n\n\n\n\n\n\n\n\n\nAug 4, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nvirtualenv\n\n\n\n\n\n\n\n\n\n\n\nAug 3, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nAug 2, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nAug 1, 2022\n\n\nJie Wang\n\n\n\n\n\n\nNo matching items"
+    "text": "visualization\n\n\n\n\n\n\n\n\n\n\n\nAug 9, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnotes\n\n\n\n\n\n\n\n\n\n\n\nAug 8, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnotes\n\n\n\n\n\n\n\n\n\n\n\nAug 7, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\npandas\n\n\n\n\n\n\n\n\n\n\n\nAug 6, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnumpy\n\n\n\n\n\n\n\n\n\n\n\nAug 5, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\npandas\n\n\n\n\n\n\n\n\n\n\n\nAug 4, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nvirtualenv\n\n\n\n\n\n\n\n\n\n\n\nAug 3, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nAug 2, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nAug 1, 2022\n\n\nJie Wang\n\n\n\n\n\n\nNo matching items"
   }
 ]
