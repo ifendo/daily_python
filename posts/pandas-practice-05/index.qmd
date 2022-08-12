@@ -1,0 +1,76 @@
+---
+title: "pandas basic"
+author: "Jie Wang"
+date: "2022-08-11"
+categories: [pandas]
+image: "pandas.png"
+jupyter: python3
+---
+
+
+# Series
+```{python}
+import pandas as pd
+
+ser = pd.Series([1, 'a', "b", True])
+print(ser)
+
+print(ser.values)
+print(ser.index)
+```
+
+## Labeling index
+
+```{python}
+ser = pd.Series([1, 2, 3, 4], index = ["a", "b", "a", "d"])
+print(ser)
+print(ser["a"]) # labels must be hashable but uniqueness is not required
+
+```
+
+## Create from Dict
+
+```{python}
+subj = {1001: "Male", 1002: "Female"}
+ser = pd.Series(subj)
+print(ser) 
+```
+
+```{python}
+subjid = [1001, 1002, 1003, 1004]
+sex = {1001: "M", 1003: "M", 1002: "F"}
+ser = pd.Series(sex, index = subjid)
+print(ser)
+
+# "NaN" is missing
+print(pd.isnull(ser))
+
+```
+
+# Basic operations
+
+```{python}
+ser = pd.Series([1, 2, 3, 4], index = ["a", "b", "c", "d"])
+print(ser * 2)
+
+s1 = pd.Series([10, 3, 2, 5], index = ["a", "b", "c", "d"])
+s2 = pd.Series([6, 9, 3, 0], index = ["a", "b", "c", "d"])
+print(s1 + s2)
+
+print(s1 > 6)
+print(s1[s1 > 6])
+
+```
+
+# What is hashable?
+
+Per Seriers documentation, "Labels need not be unique but must be a hashable type."
+
+Which objects are hashable in Python? In Python, any immutable object (such as an integer, boolean, string, tuple) is hashable, meaning its value does not change during its lifetime. This allows Python to create a unique hash value to identify it, which can be used by dictionaries to track unique keys and sets to track unique values.
+
+
+
+# Other Resources
+<https://www.datasciencemadesimple.com/python-tutorial-for-data-science/>
+<https://pbpython.com/archives.html>
+
