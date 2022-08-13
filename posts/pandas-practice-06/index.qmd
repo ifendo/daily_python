@@ -1,0 +1,54 @@
+---
+title: "pandas basic"
+author: "Jie Wang"
+date: "2022-08-12"
+categories: [pandas]
+image: "pandas.png"
+jupyter: python3
+---
+
+
+# DataFrame
+
+## Create a DataFrame from a dict of lists
+
+```{python}
+import pandas as pd
+
+rawdata = {
+    "gender": ["M", "M", "F"],
+    "age": [22, 28, 31]
+}
+
+df = pd.DataFrame(rawdata)
+print(df)
+
+# we can also assign `index` and columns per the doc
+df2 = pd.DataFrame(
+    rawdata, 
+    index = [1001, 1002, 1003],
+    columns = ["age", "gender"]
+)
+print(df2)
+
+df2.info()
+```
+
+
+## Create a DataFrame from a list of lists
+
+```{python}
+rawdata2 = [
+    [1001, "white", 32],
+    [1002, "black", 22],
+    [1003, "asian", 26],
+]
+
+df3 = pd.DataFrame(
+    rawdata2,
+    columns = ["subjid", "race", "age"]
+)
+print(df3)
+```
+
+
