@@ -7,6 +7,13 @@
     "text": "pip freeze > requirements.txt"
   },
   {
+    "objectID": "posts/python-OOP/index.html",
+    "href": "posts/python-OOP/index.html",
+    "title": "Python OOP",
+    "section": "",
+    "text": "class Car:\n    def __init__(self):\n        self.speed = 0\n        self.odometer = 0\n        self.time = 0\n\n    def say_state(self):\n        print(\"I'm going {} kph!\".format(self.speed))\n\n    def accelerate(self):\n        self.speed += 5\n\n    def brake(self):\n        self.speed -= 5\n\n    def step(self):\n        self.odometer += self.speed\n        self.time += 1\n\n    def average_speed(self):\n        if self.time!=0:\n            return self.odometer / self.time\n\n\nif __name__ == '__main__':\n    my_car = Car()\n    print(\"I'm a car!\")\n    while True:\n        action = input(\"What should I do? [A]ccelerate, [B]rake, \"\n            \"show [O]dometer, or show average [S]peed?\").upper()\n        if action not in \"ABOS\" or len(action) != 1:\n            print(\"I don't know how to do that\")\n            continue\n        if action == 'A':\n            my_car.accelerate()\n        elif action == 'B':\n            my_car.brake()\n        elif action == 'O':\n            print(\"The car has driven {} kilometers\".format(my_car.odometer))\n        elif action == 'S':\n            print(\"The car's average speed was {} kph\".format(my_car.average_speed()))\n        my_car.step()\n        my_car.say_state()"
+  },
+  {
     "objectID": "posts/numpy-intro/index.html",
     "href": "posts/numpy-intro/index.html",
     "title": "NumPy intro",
@@ -25,7 +32,7 @@
     "href": "posts/numpy-intro/index.html#an-example",
     "title": "NumPy intro",
     "section": "An example",
-    "text": "An example\n\nimport numpy as np\n\na = np.arange(15).reshape(3,5)\n\nprint(a)\nprint(a.ndim)\nprint(a.shape)\nprint(a.size)\nprint(a.dtype)\nprint(a.itemsize)\nprint(a.data)\n\n[[ 0  1  2  3  4]\n [ 5  6  7  8  9]\n [10 11 12 13 14]]\n2\n(3, 5)\n15\nint64\n8\n<memory at 0x7fecbdadb100>"
+    "text": "An example\n\nimport numpy as np\n\na = np.arange(15).reshape(3,5)\n\nprint(a)\nprint(a.ndim)\nprint(a.shape)\nprint(a.size)\nprint(a.dtype)\nprint(a.itemsize)\nprint(a.data)\n\n[[ 0  1  2  3  4]\n [ 5  6  7  8  9]\n [10 11 12 13 14]]\n2\n(3, 5)\n15\nint64\n8\n<memory at 0x7f5565b27100>"
   },
   {
     "objectID": "posts/numpy-intro/index.html#array-creation",
@@ -39,7 +46,7 @@
     "href": "posts/numpy-intro/index.html#array-helper-functions",
     "title": "NumPy intro",
     "section": "array helper functions",
-    "text": "array helper functions\n\na = np.zeros([3,4])\nb = np.zeros((2,3))\n\nc = np.ones([3,4])\nd = np.ones((2,3))\n\ne = np.empty([3,4]) # random elements\nf = np.empty((2,3)) # random elements\nprint(a)\nprint(b)\nprint(c)\nprint(d)\nprint(e)\nprint(f)\n\n# np.arange is similar to range\ng = np.arange(10,30,2)\nprint(g)\n\n[[0. 0. 0. 0.]\n [0. 0. 0. 0.]\n [0. 0. 0. 0.]]\n[[0. 0. 0.]\n [0. 0. 0.]]\n[[1. 1. 1. 1.]\n [1. 1. 1. 1.]\n [1. 1. 1. 1.]]\n[[1. 1. 1.]\n [1. 1. 1.]]\n[[6.94931536e-310 4.64277257e-310 2.64931110e+180 4.57668639e-072]\n [2.99938002e-067 1.96567554e-062 6.01346953e-154 6.01347002e-154]\n [6.09343068e-013 3.15582783e+161 9.46293857e-096 4.56264412e-119]]\n[[1.1 2.1 3.1]\n [1.2 2.2 3.2]]\n[10 12 14 16 18 20 22 24 26 28]"
+    "text": "array helper functions\n\na = np.zeros([3,4])\nb = np.zeros((2,3))\n\nc = np.ones([3,4])\nd = np.ones((2,3))\n\ne = np.empty([3,4]) # random elements\nf = np.empty((2,3)) # random elements\nprint(a)\nprint(b)\nprint(c)\nprint(d)\nprint(e)\nprint(f)\n\n# np.arange is similar to range\ng = np.arange(10,30,2)\nprint(g)\n\n[[0. 0. 0. 0.]\n [0. 0. 0. 0.]\n [0. 0. 0. 0.]]\n[[0. 0. 0.]\n [0. 0. 0.]]\n[[1. 1. 1. 1.]\n [1. 1. 1. 1.]\n [1. 1. 1. 1.]]\n[[1. 1. 1.]\n [1. 1. 1.]]\n[[4.63883583e-310 0.00000000e+000 7.69825606e+218 6.97527580e+228]\n [4.90390697e+252 1.72379504e-320 6.91719449e-310 6.91719449e-310]\n [4.63883583e-310 4.63883583e-310 7.23617646e+159 3.12938941e+231]]\n[[1.1 2.1 3.1]\n [1.2 2.2 3.2]]\n[10 12 14 16 18 20 22 24 26 28]"
   },
   {
     "objectID": "posts/numpy-intro/index.html#basic-operations",
@@ -214,6 +221,6 @@
     "href": "index.html",
     "title": "daily_python",
     "section": "",
-    "text": "pandas\n\n\n\n\n\n\n\n\n\n\n\nAug 12, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\npandas\n\n\n\n\n\n\n\n\n\n\n\nAug 11, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nvisualization\n\n\n\n\n\n\n\n\n\n\n\nAug 10, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nvisualization\n\n\n\n\n\n\n\n\n\n\n\nAug 9, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnotes\n\n\n\n\n\n\n\n\n\n\n\nAug 8, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnotes\n\n\n\n\n\n\n\n\n\n\n\nAug 7, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\npandas\n\n\n\n\n\n\n\n\n\n\n\nAug 6, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnumpy\n\n\n\n\n\n\n\n\n\n\n\nAug 5, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\npandas\n\n\n\n\n\n\n\n\n\n\n\nAug 4, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nvirtualenv\n\n\n\n\n\n\n\n\n\n\n\nAug 3, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nAug 2, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nAug 1, 2022\n\n\nJie Wang\n\n\n\n\n\n\nNo matching items"
+    "text": "oop\n\n\n\n\n\n\n\n\n\n\n\nAug 13, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\npandas\n\n\n\n\n\n\n\n\n\n\n\nAug 12, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\npandas\n\n\n\n\n\n\n\n\n\n\n\nAug 11, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nvisualization\n\n\n\n\n\n\n\n\n\n\n\nAug 10, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nvisualization\n\n\n\n\n\n\n\n\n\n\n\nAug 9, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnotes\n\n\n\n\n\n\n\n\n\n\n\nAug 8, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnotes\n\n\n\n\n\n\n\n\n\n\n\nAug 7, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\npandas\n\n\n\n\n\n\n\n\n\n\n\nAug 6, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnumpy\n\n\n\n\n\n\n\n\n\n\n\nAug 5, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\npandas\n\n\n\n\n\n\n\n\n\n\n\nAug 4, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nvirtualenv\n\n\n\n\n\n\n\n\n\n\n\nAug 3, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nAug 2, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nAug 1, 2022\n\n\nJie Wang\n\n\n\n\n\n\nNo matching items"
   }
 ]
