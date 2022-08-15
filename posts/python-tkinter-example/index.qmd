@@ -1,0 +1,31 @@
+---
+title: "Python tkinter example"
+author: "Jie Wang"
+date: "2022-08-14"
+categories: [tkinter]
+image: "image.jpg"
+jupyter: python3
+---
+
+
+# A very simple Python tkinter example
+```{python}
+#| eval: false
+
+from tkinter import messagebox
+from tkinter import Tk
+
+
+def alert(title, message, kind="info", hidemain=True):
+    if kind not in ("error", "warning", "info"):
+        raise ValueError("Unsupported alert kind.")
+
+    show_method = getattr(messagebox, "show{}".format(kind))
+    show_method(title, message)
+
+
+Tk().withdraw()
+alert("hello", "Hello world")
+alert("hello again", "Hello world", kind="warning")
+
+```
