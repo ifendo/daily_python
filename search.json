@@ -1,94 +1,24 @@
 [
   {
-    "objectID": "posts/py-env/index.html",
-    "href": "posts/py-env/index.html",
-    "title": "renv.lock equivalent in python",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
     "section": "",
-    "text": "pip freeze > requirements.txt"
+    "text": "About this blog"
   },
   {
-    "objectID": "posts/python-tkinter-example/index.html",
-    "href": "posts/python-tkinter-example/index.html",
-    "title": "Python tkinter example",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "daily_python",
     "section": "",
-    "text": "from tkinter import messagebox\nfrom tkinter import Tk\n\n\ndef alert(title, message, kind=\"info\", hidemain=True):\n    if kind not in (\"error\", \"warning\", \"info\"):\n        raise ValueError(\"Unsupported alert kind.\")\n\n    show_method = getattr(messagebox, \"show{}\".format(kind))\n    show_method(title, message)\n\n\nTk().withdraw()\nalert(\"hello\", \"Hello world\")\nalert(\"hello again\", \"Hello world\", kind=\"warning\")"
+    "text": "pandas\n\n\n\n\n\n\n\n\n\n\n\nAug 15, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\ntkinter\n\n\n\n\n\n\n\n\n\n\n\nAug 14, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\noop\n\n\n\n\n\n\n\n\n\n\n\nAug 13, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\npandas\n\n\n\n\n\n\n\n\n\n\n\nAug 12, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\npandas\n\n\n\n\n\n\n\n\n\n\n\nAug 11, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nvisualization\n\n\n\n\n\n\n\n\n\n\n\nAug 10, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nvisualization\n\n\n\n\n\n\n\n\n\n\n\nAug 9, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnotes\n\n\n\n\n\n\n\n\n\n\n\nAug 8, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnotes\n\n\n\n\n\n\n\n\n\n\n\nAug 7, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\npandas\n\n\n\n\n\n\n\n\n\n\n\nAug 6, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnumpy\n\n\n\n\n\n\n\n\n\n\n\nAug 5, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\npandas\n\n\n\n\n\n\n\n\n\n\n\nAug 4, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nvirtualenv\n\n\n\n\n\n\n\n\n\n\n\nAug 3, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nAug 2, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nAug 1, 2022\n\n\nJie Wang\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "posts/python-OOP/index.html",
-    "href": "posts/python-OOP/index.html",
-    "title": "Python OOP",
+    "objectID": "posts/pandas-practice-07/index.html",
+    "href": "posts/pandas-practice-07/index.html",
+    "title": "pandas basic",
     "section": "",
-    "text": "class Car:\n    def __init__(self):\n        self.speed = 0\n        self.odometer = 0\n        self.time = 0\n\n    def say_state(self):\n        print(\"I'm going {} kph!\".format(self.speed))\n\n    def accelerate(self):\n        self.speed += 5\n\n    def brake(self):\n        self.speed -= 5\n\n    def step(self):\n        self.odometer += self.speed\n        self.time += 1\n\n    def average_speed(self):\n        if self.time!=0:\n            return self.odometer / self.time\n\n\nif __name__ == '__main__':\n    my_car = Car()\n    print(\"I'm a car!\")\n    while True:\n        action = input(\"What should I do? [A]ccelerate, [B]rake, \"\n            \"show [O]dometer, or show average [S]peed?\").upper()\n        if action not in \"ABOS\" or len(action) != 1:\n            print(\"I don't know how to do that\")\n            continue\n        if action == 'A':\n            my_car.accelerate()\n        elif action == 'B':\n            my_car.brake()\n        elif action == 'O':\n            print(\"The car has driven {} kilometers\".format(my_car.odometer))\n        elif action == 'S':\n            print(\"The car's average speed was {} kph\".format(my_car.average_speed()))\n        my_car.step()\n        my_car.say_state()"
-  },
-  {
-    "objectID": "posts/numpy-intro/index.html",
-    "href": "posts/numpy-intro/index.html",
-    "title": "NumPy intro",
-    "section": "",
-    "text": "https://numpy.org/doc/stable/user/quickstart.html\nhttps://numpy.org/doc/stable/user/basics.html\nNumPy’s array class is called ndarray"
-  },
-  {
-    "objectID": "posts/numpy-intro/index.html#import-attributes-of-an-ndarray-object",
-    "href": "posts/numpy-intro/index.html#import-attributes-of-an-ndarray-object",
-    "title": "NumPy intro",
-    "section": "import attributes of an ndarray object:",
-    "text": "import attributes of an ndarray object:\n\nndarray.ndim\nndarray.shape\nndarray.size\nndarray.dtype\nndarray.itemsize\nndarray.data"
-  },
-  {
-    "objectID": "posts/numpy-intro/index.html#an-example",
-    "href": "posts/numpy-intro/index.html#an-example",
-    "title": "NumPy intro",
-    "section": "An example",
-    "text": "An example\n\nimport numpy as np\n\na = np.arange(15).reshape(3,5)\n\nprint(a)\nprint(a.ndim)\nprint(a.shape)\nprint(a.size)\nprint(a.dtype)\nprint(a.itemsize)\nprint(a.data)\n\n[[ 0  1  2  3  4]\n [ 5  6  7  8  9]\n [10 11 12 13 14]]\n2\n(3, 5)\n15\nint64\n8\n<memory at 0x7fb3a8f67100>"
-  },
-  {
-    "objectID": "posts/numpy-intro/index.html#array-creation",
-    "href": "posts/numpy-intro/index.html#array-creation",
-    "title": "NumPy intro",
-    "section": "Array Creation",
-    "text": "Array Creation\n1-D array\n\n# create an array from a regular python list or tuple\na = np.array([2,3,4])\nb = np.array((5,6,7)) # tuple\nc = np.array((8.1,9.2,10.3))\nprint(a)\nprint(a.dtype)\nprint(a.itemsize)\n\nprint(b)\nprint(b.dtype)\nprint(b.itemsize)\n\nprint(c)\nprint(c.dtype)\nprint(c.itemsize)\n\n[2 3 4]\nint64\n8\n[5 6 7]\nint64\n8\n[ 8.1  9.2 10.3]\nfloat64\n8\n\n\n2-D array\n\na = np.array([[1.1,2.1,3.1],[1.2,2.2,3.2]])\nb = np.array(([1,2,3],[4,5,6]))\n\nprint(a)\nprint(b)\n\n[[1.1 2.1 3.1]\n [1.2 2.2 3.2]]\n[[1 2 3]\n [4 5 6]]"
-  },
-  {
-    "objectID": "posts/numpy-intro/index.html#array-helper-functions",
-    "href": "posts/numpy-intro/index.html#array-helper-functions",
-    "title": "NumPy intro",
-    "section": "array helper functions",
-    "text": "array helper functions\n\na = np.zeros([3,4])\nb = np.zeros((2,3))\n\nc = np.ones([3,4])\nd = np.ones((2,3))\n\ne = np.empty([3,4]) # random elements\nf = np.empty((2,3)) # random elements\nprint(a)\nprint(b)\nprint(c)\nprint(d)\nprint(e)\nprint(f)\n\n# np.arange is similar to range\ng = np.arange(10,30,2)\nprint(g)\n\n[[0. 0. 0. 0.]\n [0. 0. 0. 0.]\n [0. 0. 0. 0.]]\n[[0. 0. 0.]\n [0. 0. 0.]]\n[[1. 1. 1. 1.]\n [1. 1. 1. 1.]\n [1. 1. 1. 1.]]\n[[1. 1. 1.]\n [1. 1. 1.]]\n[[ 4.67766749e-310  0.00000000e+000  6.93719658e-310  6.93719658e-310]\n [ 6.93719404e-310  3.21142670e-322  6.93719700e-310  4.67766749e-310]\n [ 4.67766747e-310 -1.23896097e+230  6.93716280e-310  4.67766737e-310]]\n[[1.1 2.1 3.1]\n [1.2 2.2 3.2]]\n[10 12 14 16 18 20 22 24 26 28]"
-  },
-  {
-    "objectID": "posts/numpy-intro/index.html#basic-operations",
-    "href": "posts/numpy-intro/index.html#basic-operations",
-    "title": "NumPy intro",
-    "section": "Basic Operations",
-    "text": "Basic Operations\n\na = np.array([20,30,40,50])\nb = np.arange(4)\nprint(a)\nprint(b)\n\nprint(a-b)\nprint(b**2)\nprint(a < 35)\n\n[20 30 40 50]\n[0 1 2 3]\n[20 29 38 47]\n[0 1 4 9]\n[ True  True False False]\n\n\n\na = np.arange(12).reshape(3,4)\nprint(a)\n\nprint(a.sum(axis = 0)) # sum of each column\nprint(a.sum(axis = 1)) # sum of each row\n\n[[ 0  1  2  3]\n [ 4  5  6  7]\n [ 8  9 10 11]]\n[12 15 18 21]\n[ 6 22 38]"
-  },
-  {
-    "objectID": "posts/pandas-practice-01/index.html",
-    "href": "posts/pandas-practice-01/index.html",
-    "title": "Pandas basics 01",
-    "section": "",
-    "text": "Creating a pandas DataFrame\n\nimport pandas as pd\n\ndf = pd.DataFrame({\n    \"Date\": [\"11/05/19\", \"12/05/19\", \"13/05/19\"],\n    \"Time Worked\": [3, 6, 5],\n    \"Money Earned\": [33.5, 42.3, 52.1],\n})\n\n\n\nbasic summaries\n\ndf[\"Time Worked\"].sum()\ndf[\"Money Earned\"].sum()\n\n127.9\n\n\n\n\nA basic plot from pandas\n\ndf.plot(x=\"Date\", y=\"Money Earned\", kind = \"bar\")\n\n<AxesSubplot:xlabel='Date'>"
-  },
-  {
-    "objectID": "posts/data-visualization-101/index.html",
-    "href": "posts/data-visualization-101/index.html",
-    "title": "Data Visualization",
-    "section": "",
-    "text": "Make it easy for the audience to get the point"
-  },
-  {
-    "objectID": "posts/data-visualization-101/index.html#from-pandas-object",
-    "href": "posts/data-visualization-101/index.html#from-pandas-object",
-    "title": "Data Visualization",
-    "section": "from pandas object",
-    "text": "from pandas object\n\nmtcars = pd.read_csv(\"mtcars.csv\")\nmtcars.head()\nmpg = mtcars[\"mpg\"]\n\nmpg.plot()\n\n<AxesSubplot:>\n\n\n\n\n\n\ndf = mtcars[[\"cyl\", \"wt\", \"mpg\"]]\n\ndf.plot()\n\n<AxesSubplot:>\n\n\n\n\n\n\nbar chart\n\nplt.bar(x, y)\n\n<BarContainer object of 9 artists>\n\n\n\n\n\n\ndf.plot(kind = \"barh\")\n\n<AxesSubplot:>\n\n\n\n\n\n\n\nPie chart\n\nx = [1,2,3,4,0.5]\nplt.pie(x)\nplt.show()\n# plt.savefig(\"pie.png\")"
-  },
-  {
-    "objectID": "posts/pandas-practice-04/index.html",
-    "href": "posts/pandas-practice-04/index.html",
-    "title": "Python for Data Science Roadmap",
-    "section": "",
-    "text": "Data Preparation Basics\nData Visualization 101\nPractical Data Visualization\nBasic Math and Statistics\nData Sourcing via Web Scraping\nBuilding Collaborative Analytics with Plotly\n\n\nimport pandas as pd\nimport numpy as np\n\ns = pd.Series(np.arange(5), index = [\"row 1\", \"row 2\", \"row 3\", \"row 4\", \"row 5\"])\n\nprint(s)\n\nrow 1    0\nrow 2    1\nrow 3    2\nrow 4    3\nrow 5    4\ndtype: int64\n\n\n\n\n\nnp.random.seed(25)\nDF_obj = pd.DataFrame(\n    np.random.rand(25).reshape(5,5),\n    index = [\"row 1\", \"row 2\", \"row 3\", \"row 4\", \"row 5\"],\n    columns = [\"column 1\", \"column 2\", \"column 3\", \"column 4\", \"column 5\"]\n)\n\nprint(DF_obj)\n\n# row 2/5 and column 5/2\nprint(DF_obj.loc[[\"row 2\", \"row 5\"], [\"column 5\", \"column 2\"]])\n\n       column 1  column 2  column 3  column 4  column 5\nrow 1  0.870124  0.582277  0.278839  0.185911  0.411100\nrow 2  0.117376  0.684969  0.437611  0.556229  0.367080\nrow 3  0.402366  0.113041  0.447031  0.585445  0.161985\nrow 4  0.520719  0.326051  0.699186  0.366395  0.836375\nrow 5  0.481343  0.516502  0.383048  0.997541  0.514244\n       column 5  column 2\nrow 2  0.367080  0.684969\nrow 5  0.514244  0.516502"
+    "text": "https://pandas.pydata.org/docs/user_guide/indexing.html#different-choices-for-indexing\nhttps://pandas.pydata.org/docs/reference/api/pandas.DataFrame.loc.html?highlight=loc#\n\n\n\nimport pandas as pd\n\ndf = pd.DataFrame(\n    [\n        [1, 3],\n        [2, 4],\n        [3, 5]\n    ],\n    index=['cobra', 'viper', 'sidewinder'],\n    columns=['max_speed', 'shield']\n)\n\nprint(df)\n\n            max_speed  shield\ncobra               1       3\nviper               2       4\nsidewinder          3       5\n\n\n\n\n\nres = df.loc['viper']\nprint(type(res))\nprint(res)\n\n<class 'pandas.core.series.Series'>\nmax_speed    2\nshield       4\nName: viper, dtype: int64\n\n\n\n\n\n\nres = df.loc[['viper', 'cobra']]\nprint(type(res))\nprint(res)\n\n<class 'pandas.core.frame.DataFrame'>\n       max_speed  shield\nviper          2       4\ncobra          1       3\n\n\n\n\n\n\nres = df.loc['viper','max_speed']\nprint(type(res))\nprint(res)\n\n<class 'numpy.int64'>\n2\n\n\n\n\n\n\nres = df.loc['viper':'sidewinder', 'max_speed']\nprint(type(res))\nprint(res)\n\n<class 'pandas.core.series.Series'>\nviper         2\nsidewinder    3\nName: max_speed, dtype: int64\n\n\n\n\n\n\nres = df.loc[[True, False, True]]\nprint(type(res))\nprint(res)\n\n<class 'pandas.core.frame.DataFrame'>\n            max_speed  shield\ncobra               1       3\nsidewinder          3       5\n\n\n\n\n\n\n\n\n\nres = df.iloc[0]\nprint(type(res))\nprint(res)\n\n<class 'pandas.core.series.Series'>\nmax_speed    1\nshield       3\nName: cobra, dtype: int64\n\n\n\n\n\n\nres = df.iloc[[1,2]]\nprint(type(res))\nprint(res)\n\n<class 'pandas.core.frame.DataFrame'>\n            max_speed  shield\nviper               2       4\nsidewinder          3       5\n\n\n\n\n\n\nres = df.iloc[0,1]\nprint(type(res))\nprint(res)\n\n<class 'numpy.int64'>\n3\n\n\n\n\n\n\nres = df.iloc[:, :2]\nprint(res)\nprint(type(res))\n\n            max_speed  shield\ncobra               1       3\nviper               2       4\nsidewinder          3       5\n<class 'pandas.core.frame.DataFrame'>"
   },
   {
     "objectID": "posts/pandas-practice-02/index.html",
@@ -182,27 +112,6 @@
     "text": "Concatenating and transforming\n\nDF_obj1 = pd.DataFrame(np.arange(25).reshape(5,5))\nDF_obj1\n\nDF_obj2 = pd.DataFrame(np.arange(15).reshape(5,3))\nDF_obj2\n\nDF_combined = pd.concat([DF_obj1, DF_obj2], axis = 1) # by column\nDF_combined\n\nDF_combined_row = pd.concat([DF_obj1, DF_obj2], axis = 0) # by row\nDF_combined_row\n\n# drop data\nDF_obj1.drop([0,4]) # row with index 0 and 4\nDF_obj1.drop([0,4], axis = 1) # drop column with index 0 and 4\n\n\n\n\n\n  \n    \n      \n      1\n      2\n      3\n    \n  \n  \n    \n      0\n      1\n      2\n      3\n    \n    \n      1\n      6\n      7\n      8\n    \n    \n      2\n      11\n      12\n      13\n    \n    \n      3\n      16\n      17\n      18\n    \n    \n      4\n      21\n      22\n      23"
   },
   {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
-    "section": "",
-    "text": "Creating a pandas DataFrame\n\nimport pandas as pd\n\ndata = {\"Name\": [\"a\", \"b\", \"c\", \"d\"],\n        \"Age\": [24, 23, 22, 19]}\n\ndata\n\ndf = pd.DataFrame(data)\ndf\n\n\n\n\n\n  \n    \n      \n      Name\n      Age\n    \n  \n  \n    \n      0\n      a\n      24\n    \n    \n      1\n      b\n      23\n    \n    \n      2\n      c\n      22\n    \n    \n      3\n      d\n      19\n    \n  \n\n\n\n\n\n\nSelecting a Column\n\ndf[\"Name\"]\ndf[[\"Name\"]] # the difference?\n\n\n\n\n\n  \n    \n      \n      Name\n    \n  \n  \n    \n      0\n      a\n    \n    \n      1\n      b\n    \n    \n      2\n      c\n    \n    \n      3\n      d\n    \n  \n\n\n\n\n\n\nSelecting a Row\n\ndf.loc[1]\ndf.iloc[1]\n?df.iloc\n\n\n\nData Selection, addition\n\n# ?df.insert\ndf.insert(1, \"Sex\", \"F\")\ndel df[\"Sex\"]\ndf.insert(2, \"Sex\", \"M\")\ndf\n\n\n\n\n\n  \n    \n      \n      Name\n      Age\n      Sex\n    \n  \n  \n    \n      0\n      a\n      24\n      M\n    \n    \n      1\n      b\n      23\n      M\n    \n    \n      2\n      c\n      22\n      M\n    \n    \n      3\n      d\n      19\n      M\n    \n  \n\n\n\n\n\n\nWorking with missing data\n\nimport numpy as np\ndata = {\"Name\": ['A', np.nan], \"Age\": [23, np.nan]}\n\ndf = pd.DataFrame(data)\ndf\n\ndf.isnull()\ndf.fillna(0)\n\n\n\n\n\n  \n    \n      \n      Name\n      Age\n    \n  \n  \n    \n      0\n      A\n      23.0\n    \n    \n      1\n      0\n      0.0\n    \n  \n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nuse exit instead of exit() to exit the RStudio Python REPL"
-  },
-  {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
-    "section": "",
-    "text": "Since this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
-  },
-  {
-    "objectID": "posts/pandas-practice-06/index.html",
-    "href": "posts/pandas-practice-06/index.html",
-    "title": "pandas basic",
-    "section": "",
-    "text": "import pandas as pd\n\nrawdata = {\n    \"gender\": [\"M\", \"M\", \"F\"],\n    \"age\": [22, 28, 31]\n}\n\ndf = pd.DataFrame(rawdata)\nprint(df)\n\n# we can also assign `index` and columns per the doc\ndf2 = pd.DataFrame(\n    rawdata, \n    index = [1001, 1002, 1003],\n    columns = [\"age\", \"gender\"]\n)\nprint(df2)\n\ndf2.info()\n\n  gender  age\n0      M   22\n1      M   28\n2      F   31\n      age gender\n1001   22      M\n1002   28      M\n1003   31      F\n<class 'pandas.core.frame.DataFrame'>\nInt64Index: 3 entries, 1001 to 1003\nData columns (total 2 columns):\n #   Column  Non-Null Count  Dtype \n---  ------  --------------  ----- \n 0   age     3 non-null      int64 \n 1   gender  3 non-null      object\ndtypes: int64(1), object(1)\nmemory usage: 72.0+ bytes\n\n\n\n\n\n\nrawdata2 = [\n    [1001, \"white\", 32],\n    [1002, \"black\", 22],\n    [1003, \"asian\", 26],\n]\n\ndf3 = pd.DataFrame(\n    rawdata2,\n    columns = [\"subjid\", \"race\", \"age\"]\n)\nprint(df3)\n\n   subjid   race  age\n0    1001  white   32\n1    1002  black   22\n2    1003  asian   26"
-  },
-  {
     "objectID": "posts/pandas-practice-05/index.html",
     "href": "posts/pandas-practice-05/index.html",
     "title": "pandas basic",
@@ -217,17 +126,115 @@
     "text": "Create a blank figure object\nAdd axes to the figure\nGenerate plot(s) within figure object\nSpecify plotting and layout parameters for the plots within your figure\n\n\nimport numpy as np\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\n\n%matplotlib inline\nplt.rcParams[\"figure.figsize\"]=5,4\n\nx = range(1, 10)\ny = [1,2,3,4,0,4,3,2,1]\n\n# fig = plt.figure()\n# ax = fig.add_axes([.1,.1,1,1])\n# ax.plot(x,y)\n\n\nfig = plt.figure()\nax = fig.add_axes([.1,.1,1,1])\n\nax.set_xlim([1,9])\nax.set_ylim([0,5])\n\nax.set_xticks([0,1,2,4,5,6,8,9,10])\nax.set_yticks([0,1,2,3,4,5])\n\nax.plot(x,y)"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "posts/numpy-intro/index.html",
+    "href": "posts/numpy-intro/index.html",
+    "title": "NumPy intro",
     "section": "",
-    "text": "About this blog"
+    "text": "https://numpy.org/doc/stable/user/quickstart.html\nhttps://numpy.org/doc/stable/user/basics.html\nNumPy’s array class is called ndarray"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "daily_python",
+    "objectID": "posts/numpy-intro/index.html#import-attributes-of-an-ndarray-object",
+    "href": "posts/numpy-intro/index.html#import-attributes-of-an-ndarray-object",
+    "title": "NumPy intro",
+    "section": "import attributes of an ndarray object:",
+    "text": "import attributes of an ndarray object:\n\nndarray.ndim\nndarray.shape\nndarray.size\nndarray.dtype\nndarray.itemsize\nndarray.data"
+  },
+  {
+    "objectID": "posts/numpy-intro/index.html#an-example",
+    "href": "posts/numpy-intro/index.html#an-example",
+    "title": "NumPy intro",
+    "section": "An example",
+    "text": "An example\n\nimport numpy as np\n\na = np.arange(15).reshape(3,5)\n\nprint(a)\nprint(a.ndim)\nprint(a.shape)\nprint(a.size)\nprint(a.dtype)\nprint(a.itemsize)\nprint(a.data)\n\n[[ 0  1  2  3  4]\n [ 5  6  7  8  9]\n [10 11 12 13 14]]\n2\n(3, 5)\n15\nint64\n8\n<memory at 0x7f2ec86fb2a0>"
+  },
+  {
+    "objectID": "posts/numpy-intro/index.html#array-creation",
+    "href": "posts/numpy-intro/index.html#array-creation",
+    "title": "NumPy intro",
+    "section": "Array Creation",
+    "text": "Array Creation\n1-D array\n\n# create an array from a regular python list or tuple\na = np.array([2,3,4])\nb = np.array((5,6,7)) # tuple\nc = np.array((8.1,9.2,10.3))\nprint(a)\nprint(a.dtype)\nprint(a.itemsize)\n\nprint(b)\nprint(b.dtype)\nprint(b.itemsize)\n\nprint(c)\nprint(c.dtype)\nprint(c.itemsize)\n\n[2 3 4]\nint64\n8\n[5 6 7]\nint64\n8\n[ 8.1  9.2 10.3]\nfloat64\n8\n\n\n2-D array\n\na = np.array([[1.1,2.1,3.1],[1.2,2.2,3.2]])\nb = np.array(([1,2,3],[4,5,6]))\n\nprint(a)\nprint(b)\n\n[[1.1 2.1 3.1]\n [1.2 2.2 3.2]]\n[[1 2 3]\n [4 5 6]]"
+  },
+  {
+    "objectID": "posts/numpy-intro/index.html#array-helper-functions",
+    "href": "posts/numpy-intro/index.html#array-helper-functions",
+    "title": "NumPy intro",
+    "section": "array helper functions",
+    "text": "array helper functions\n\na = np.zeros([3,4])\nb = np.zeros((2,3))\n\nc = np.ones([3,4])\nd = np.ones((2,3))\n\ne = np.empty([3,4]) # random elements\nf = np.empty((2,3)) # random elements\nprint(a)\nprint(b)\nprint(c)\nprint(d)\nprint(e)\nprint(f)\n\n# np.arange is similar to range\ng = np.arange(10,30,2)\nprint(g)\n\n[[0. 0. 0. 0.]\n [0. 0. 0. 0.]\n [0. 0. 0. 0.]]\n[[0. 0. 0.]\n [0. 0. 0.]]\n[[1. 1. 1. 1.]\n [1. 1. 1. 1.]\n [1. 1. 1. 1.]]\n[[1. 1. 1.]\n [1. 1. 1.]]\n[[6.90900554e-310 4.64101962e-310 6.90896026e-310 6.90896024e-310]\n [6.90896025e-310 6.90896026e-310 6.90896024e-310 6.90896026e-310]\n [6.90896026e-310 6.90896025e-310 6.90896026e-310 6.90896025e-310]]\n[[1.1 2.1 3.1]\n [1.2 2.2 3.2]]\n[10 12 14 16 18 20 22 24 26 28]"
+  },
+  {
+    "objectID": "posts/numpy-intro/index.html#basic-operations",
+    "href": "posts/numpy-intro/index.html#basic-operations",
+    "title": "NumPy intro",
+    "section": "Basic Operations",
+    "text": "Basic Operations\n\na = np.array([20,30,40,50])\nb = np.arange(4)\nprint(a)\nprint(b)\n\nprint(a-b)\nprint(b**2)\nprint(a < 35)\n\n[20 30 40 50]\n[0 1 2 3]\n[20 29 38 47]\n[0 1 4 9]\n[ True  True False False]\n\n\n\na = np.arange(12).reshape(3,4)\nprint(a)\n\nprint(a.sum(axis = 0)) # sum of each column\nprint(a.sum(axis = 1)) # sum of each row\n\n[[ 0  1  2  3]\n [ 4  5  6  7]\n [ 8  9 10 11]]\n[12 15 18 21]\n[ 6 22 38]"
+  },
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
     "section": "",
-    "text": "tkinter\n\n\n\n\n\n\n\n\n\n\n\nAug 14, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\noop\n\n\n\n\n\n\n\n\n\n\n\nAug 13, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\npandas\n\n\n\n\n\n\n\n\n\n\n\nAug 12, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\npandas\n\n\n\n\n\n\n\n\n\n\n\nAug 11, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nvisualization\n\n\n\n\n\n\n\n\n\n\n\nAug 10, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nvisualization\n\n\n\n\n\n\n\n\n\n\n\nAug 9, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnotes\n\n\n\n\n\n\n\n\n\n\n\nAug 8, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnotes\n\n\n\n\n\n\n\n\n\n\n\nAug 7, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\npandas\n\n\n\n\n\n\n\n\n\n\n\nAug 6, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnumpy\n\n\n\n\n\n\n\n\n\n\n\nAug 5, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\npandas\n\n\n\n\n\n\n\n\n\n\n\nAug 4, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nvirtualenv\n\n\n\n\n\n\n\n\n\n\n\nAug 3, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nAug 2, 2022\n\n\nJie Wang\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nAug 1, 2022\n\n\nJie Wang\n\n\n\n\n\n\nNo matching items"
+    "text": "Creating a pandas DataFrame\n\nimport pandas as pd\n\ndata = {\"Name\": [\"a\", \"b\", \"c\", \"d\"],\n        \"Age\": [24, 23, 22, 19]}\n\ndata\n\ndf = pd.DataFrame(data)\ndf\n\n\n\n\n\n  \n    \n      \n      Name\n      Age\n    \n  \n  \n    \n      0\n      a\n      24\n    \n    \n      1\n      b\n      23\n    \n    \n      2\n      c\n      22\n    \n    \n      3\n      d\n      19\n    \n  \n\n\n\n\n\n\nSelecting a Column\n\ndf[\"Name\"]\ndf[[\"Name\"]] # the difference?\n\n\n\n\n\n  \n    \n      \n      Name\n    \n  \n  \n    \n      0\n      a\n    \n    \n      1\n      b\n    \n    \n      2\n      c\n    \n    \n      3\n      d\n    \n  \n\n\n\n\n\n\nSelecting a Row\n\ndf.loc[1]\ndf.iloc[1]\n?df.iloc\n\n\n\nData Selection, addition\n\n# ?df.insert\ndf.insert(1, \"Sex\", \"F\")\ndel df[\"Sex\"]\ndf.insert(2, \"Sex\", \"M\")\ndf\n\n\n\n\n\n  \n    \n      \n      Name\n      Age\n      Sex\n    \n  \n  \n    \n      0\n      a\n      24\n      M\n    \n    \n      1\n      b\n      23\n      M\n    \n    \n      2\n      c\n      22\n      M\n    \n    \n      3\n      d\n      19\n      M\n    \n  \n\n\n\n\n\n\nWorking with missing data\n\nimport numpy as np\ndata = {\"Name\": ['A', np.nan], \"Age\": [23, np.nan]}\n\ndf = pd.DataFrame(data)\ndf\n\ndf.isnull()\ndf.fillna(0)\n\n\n\n\n\n  \n    \n      \n      Name\n      Age\n    \n  \n  \n    \n      0\n      A\n      23.0\n    \n    \n      1\n      0\n      0.0\n    \n  \n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nuse exit instead of exit() to exit the RStudio Python REPL"
+  },
+  {
+    "objectID": "posts/python-OOP/index.html",
+    "href": "posts/python-OOP/index.html",
+    "title": "Python OOP",
+    "section": "",
+    "text": "class Car:\n    def __init__(self):\n        self.speed = 0\n        self.odometer = 0\n        self.time = 0\n\n    def say_state(self):\n        print(\"I'm going {} kph!\".format(self.speed))\n\n    def accelerate(self):\n        self.speed += 5\n\n    def brake(self):\n        self.speed -= 5\n\n    def step(self):\n        self.odometer += self.speed\n        self.time += 1\n\n    def average_speed(self):\n        if self.time!=0:\n            return self.odometer / self.time\n\n\nif __name__ == '__main__':\n    my_car = Car()\n    print(\"I'm a car!\")\n    while True:\n        action = input(\"What should I do? [A]ccelerate, [B]rake, \"\n            \"show [O]dometer, or show average [S]peed?\").upper()\n        if action not in \"ABOS\" or len(action) != 1:\n            print(\"I don't know how to do that\")\n            continue\n        if action == 'A':\n            my_car.accelerate()\n        elif action == 'B':\n            my_car.brake()\n        elif action == 'O':\n            print(\"The car has driven {} kilometers\".format(my_car.odometer))\n        elif action == 'S':\n            print(\"The car's average speed was {} kph\".format(my_car.average_speed()))\n        my_car.step()\n        my_car.say_state()"
+  },
+  {
+    "objectID": "posts/pandas-practice-01/index.html",
+    "href": "posts/pandas-practice-01/index.html",
+    "title": "Pandas basics 01",
+    "section": "",
+    "text": "Creating a pandas DataFrame\n\nimport pandas as pd\n\ndf = pd.DataFrame({\n    \"Date\": [\"11/05/19\", \"12/05/19\", \"13/05/19\"],\n    \"Time Worked\": [3, 6, 5],\n    \"Money Earned\": [33.5, 42.3, 52.1],\n})\n\n\n\nbasic summaries\n\ndf[\"Time Worked\"].sum()\ndf[\"Money Earned\"].sum()\n\n127.9\n\n\n\n\nA basic plot from pandas\n\ndf.plot(x=\"Date\", y=\"Money Earned\", kind = \"bar\")\n\n<AxesSubplot:xlabel='Date'>"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "Since this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "posts/data-visualization-101/index.html",
+    "href": "posts/data-visualization-101/index.html",
+    "title": "Data Visualization",
+    "section": "",
+    "text": "Make it easy for the audience to get the point"
+  },
+  {
+    "objectID": "posts/data-visualization-101/index.html#from-pandas-object",
+    "href": "posts/data-visualization-101/index.html#from-pandas-object",
+    "title": "Data Visualization",
+    "section": "from pandas object",
+    "text": "from pandas object\n\nmtcars = pd.read_csv(\"mtcars.csv\")\nmtcars.head()\nmpg = mtcars[\"mpg\"]\n\nmpg.plot()\n\n<AxesSubplot:>\n\n\n\n\n\n\ndf = mtcars[[\"cyl\", \"wt\", \"mpg\"]]\n\ndf.plot()\n\n<AxesSubplot:>\n\n\n\n\n\n\nbar chart\n\nplt.bar(x, y)\n\n<BarContainer object of 9 artists>\n\n\n\n\n\n\ndf.plot(kind = \"barh\")\n\n<AxesSubplot:>\n\n\n\n\n\n\n\nPie chart\n\nx = [1,2,3,4,0.5]\nplt.pie(x)\nplt.show()\n# plt.savefig(\"pie.png\")"
+  },
+  {
+    "objectID": "posts/py-env/index.html",
+    "href": "posts/py-env/index.html",
+    "title": "renv.lock equivalent in python",
+    "section": "",
+    "text": "pip freeze > requirements.txt"
+  },
+  {
+    "objectID": "posts/pandas-practice-04/index.html",
+    "href": "posts/pandas-practice-04/index.html",
+    "title": "Python for Data Science Roadmap",
+    "section": "",
+    "text": "Data Preparation Basics\nData Visualization 101\nPractical Data Visualization\nBasic Math and Statistics\nData Sourcing via Web Scraping\nBuilding Collaborative Analytics with Plotly\n\n\nimport pandas as pd\nimport numpy as np\n\ns = pd.Series(np.arange(5), index = [\"row 1\", \"row 2\", \"row 3\", \"row 4\", \"row 5\"])\n\nprint(s)\n\nrow 1    0\nrow 2    1\nrow 3    2\nrow 4    3\nrow 5    4\ndtype: int64\n\n\n\n\n\nnp.random.seed(25)\nDF_obj = pd.DataFrame(\n    np.random.rand(25).reshape(5,5),\n    index = [\"row 1\", \"row 2\", \"row 3\", \"row 4\", \"row 5\"],\n    columns = [\"column 1\", \"column 2\", \"column 3\", \"column 4\", \"column 5\"]\n)\n\nprint(DF_obj)\n\n# row 2/5 and column 5/2\nprint(DF_obj.loc[[\"row 2\", \"row 5\"], [\"column 5\", \"column 2\"]])\n\n       column 1  column 2  column 3  column 4  column 5\nrow 1  0.870124  0.582277  0.278839  0.185911  0.411100\nrow 2  0.117376  0.684969  0.437611  0.556229  0.367080\nrow 3  0.402366  0.113041  0.447031  0.585445  0.161985\nrow 4  0.520719  0.326051  0.699186  0.366395  0.836375\nrow 5  0.481343  0.516502  0.383048  0.997541  0.514244\n       column 5  column 2\nrow 2  0.367080  0.684969\nrow 5  0.514244  0.516502"
+  },
+  {
+    "objectID": "posts/pandas-practice-06/index.html",
+    "href": "posts/pandas-practice-06/index.html",
+    "title": "pandas basic",
+    "section": "",
+    "text": "import pandas as pd\n\nrawdata = {\n    \"gender\": [\"M\", \"M\", \"F\"],\n    \"age\": [22, 28, 31]\n}\n\ndf = pd.DataFrame(rawdata)\nprint(df)\n\n# we can also assign `index` and columns per the doc\ndf2 = pd.DataFrame(\n    rawdata, \n    index = [1001, 1002, 1003],\n    columns = [\"age\", \"gender\"]\n)\nprint(df2)\n\ndf2.info()\n\n  gender  age\n0      M   22\n1      M   28\n2      F   31\n      age gender\n1001   22      M\n1002   28      M\n1003   31      F\n<class 'pandas.core.frame.DataFrame'>\nInt64Index: 3 entries, 1001 to 1003\nData columns (total 2 columns):\n #   Column  Non-Null Count  Dtype \n---  ------  --------------  ----- \n 0   age     3 non-null      int64 \n 1   gender  3 non-null      object\ndtypes: int64(1), object(1)\nmemory usage: 72.0+ bytes\n\n\n\n\n\n\nrawdata2 = [\n    [1001, \"white\", 32],\n    [1002, \"black\", 22],\n    [1003, \"asian\", 26],\n]\n\ndf3 = pd.DataFrame(\n    rawdata2,\n    columns = [\"subjid\", \"race\", \"age\"]\n)\nprint(df3)\n\n   subjid   race  age\n0    1001  white   32\n1    1002  black   22\n2    1003  asian   26"
+  },
+  {
+    "objectID": "posts/python-tkinter-example/index.html",
+    "href": "posts/python-tkinter-example/index.html",
+    "title": "Python tkinter example",
+    "section": "",
+    "text": "from tkinter import messagebox\nfrom tkinter import Tk\n\n\ndef alert(title, message, kind=\"info\", hidemain=True):\n    if kind not in (\"error\", \"warning\", \"info\"):\n        raise ValueError(\"Unsupported alert kind.\")\n\n    show_method = getattr(messagebox, \"show{}\".format(kind))\n    show_method(title, message)\n\n\nTk().withdraw()\nalert(\"hello\", \"Hello world\")\nalert(\"hello again\", \"Hello world\", kind=\"warning\")"
   }
 ]
