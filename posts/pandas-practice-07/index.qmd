@@ -9,9 +9,10 @@ jupyter: python3
 
 
 # DataFrame indexing
-<https://pandas.pydata.org/docs/user_guide/indexing.html#different-choices-for-indexing>
 
-<https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.loc.html?highlight=loc#>
+[User Guide](https://pandas.pydata.org/docs/user_guide/indexing.html#different-choices-for-indexing)
+
+[API reference](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.loc.html?highlight=loc#)
 
 ## .loc()
 
