@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/data-visualization-103/index.html",
       "/posts/pandas-practice-07/index.html",
       "/posts/python-tkinter-example/index.html",
       "/posts/python-OOP/index.html",
